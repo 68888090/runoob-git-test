@@ -1,41 +1,47 @@
 #include "sever.h"
 #include"tcpsocket.h"
 sever::sever() {
-	fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);//µÚÒ»¸ö²ÎÊı´ú±íÊ¹ÓÃµÄÊÇIPV4µØÖ·£¬
-	//µÚ¶ş¸ö´ú±íÊ¹ÓÃÁ÷Ê½Ì×½Ó×Ö£¬µÚÈı¸ö´ú±íÎÒÃÇÊ¹ÓÃTCPĞ­Òé,
+	fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);//ç¬¬ä¸€ä¸ªå‚æ•°ä»£è¡¨ä½¿ç”¨çš„æ˜¯IPV4åœ°å€ï¼Œ
+	//ç¬¬äºŒä¸ªä»£è¡¨ä½¿ç”¨æµå¼å¥—æ¥å­—ï¼Œç¬¬ä¸‰ä¸ªä»£è¡¨æˆ‘ä»¬ä½¿ç”¨TCPåè®®,
 	if (fd==INVALID_SOCKET)
 	{
 		printf("error\n socket()can`t create new socket\n");
 	}
-	///ÔÚ¹¹ÔìÆ÷ÖĞ°ó¶¨socket
-	///////ÎªÊ²Ã´²»ÄÜ°ó¶¨ipºÅÓë¶Ë¿ÚºÅ
-	struct sockaddr_in addr;//////Ê¹ÓÃÀàĞÍsockaddr±ä³ÉÊ¹ÓÃsocketaddrÀàĞÍµ¼ÖÂ´íÎó
-	addr.sin_family = AF_INET;///////////////////////////////////////////////////////////°ó¶¨¼Ò×å
-	addr.sin_port =htons( PORT);//´óĞ¡¶ËµÄ×ª»»ÎÊÌâ,ÍøÂç×Ö½ÚĞòÓë±¾µØ×Ö½ÚĞòµÄ×ª»»//////////°ó¶¨¶Ë¿Ú
-	addr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");///////////°ó¶¨ipµØÖ·//////////ÎÊÌâ/////ipµØÖ·µÄ¸ñÊ½ÎÊÌâ
+	///åœ¨æ„é€ å™¨ä¸­ç»‘å®šsocket
+	///////ä¸ºä»€ä¹ˆä¸èƒ½ç»‘å®šipå·ä¸ç«¯å£å·
+	struct sockaddr_in addr;//////ä½¿ç”¨ç±»å‹sockaddrå˜æˆä½¿ç”¨socketaddrç±»å‹å¯¼è‡´é”™è¯¯
+	addr.sin_family = AF_INET;///////////////////////////////////////////////////////////ç»‘å®šå®¶æ—
+	addr.sin_port =htons( PORT);//å¤§å°ç«¯çš„è½¬æ¢é—®é¢˜,ç½‘ç»œå­—èŠ‚åºä¸æœ¬åœ°å­—èŠ‚åºçš„è½¬æ¢//////////ç»‘å®šç«¯å£
+	addr.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");///////////ç»‘å®šipåœ°å€//////////é—®é¢˜/////ipåœ°å€çš„æ ¼å¼é—®é¢˜
 	if (SOCKET_ERROR == bind(fd, (struct sockaddr*)&addr, sizeof(addr))) {
 		printf("error\n bind()can`t create new socket\n");
 	}
+	
 	listen(fd, 5);
 	printf(" sever is created successfully\n");
 	}
 void main() {
 	createinit();
 	sever Sever;
-	//client clone;
-	//clone.fd	=   accept(Sever.fd, NULL, NULL);////ÏÖÔÚ»¹Ã»ÓĞ½øĞĞ³õÊ¼»¯¶ÔÏóclient
-	SOCKET fd= accept(Sever.fd, NULL, NULL);/////Ã»ÓĞÁ¬½ÓÏîËùÒÔ½øĞĞÁË¿¨¿Ç
+	//client clone; 
+	//clone.fd	=   accept(Sever.fd, NULL, NULL);////ç°åœ¨è¿˜æ²¡æœ‰è¿›è¡Œåˆå§‹åŒ–å¯¹è±¡client
+	SOCKET fd= accept(Sever.fd, NULL, NULL);/////æ²¡æœ‰è¿æ¥é¡¹æ‰€ä»¥è¿›è¡Œäº†å¡å£³
 	printf("created successfully,wait for connect\n");
-	std::cout << "ÇëÊäÈëÄúÏëÒª´«ÊäµÄÊı¾İ\n" << std::endl;
+	std::cout << "è¯·è¾“å…¥æ‚¨æƒ³è¦ä¼ è¾“çš„æ•°æ®\n" << std::endl;
 	char* t = new char[1024];
 	std::cin >> t;
 	if (fd==INVALID_SOCKET)
 	{
 		printf("error\n accept()can`t create new socket\n");
 	}
-	if (SOCKET_ERROR == send(fd, t, 12, 0)) {//////Æô¶¯£¬µ«ÊÇsend·¢ËÍµ½ºÎ´¦²»Öª
+	if (SOCKET_ERROR == send(fd, t, 12, 0)) {//////å¯åŠ¨ï¼Œä½†æ˜¯sendå‘é€åˆ°ä½•å¤„ä¸çŸ¥
 		printf("error\n send()can`t create new socket\n");
 	}//https://learn.microsoft.com/zh-cn/windows/win32/api/winsock2/nf-winsock2-send
+	char recvbuf[1024];
+	memset(recvbuf, 0, 1024);
+	int ret;
+	ret = recv(fd, recvbuf, 1024, 0);//////å¯åŠ¨ï¼Œä½†æ˜¯recvçš„æ•°æ®åœ¨å“ªä¸çŸ¥
+	std::cout << recvbuf << std::endl;
 	closesocket(fd);
 	closesocket(Sever.fd);
 	//close_Socket();
