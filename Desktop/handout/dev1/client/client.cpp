@@ -11,34 +11,41 @@ client::client(const char* ip) {
 	struct sockaddr_in addr;
 	addr.sin_family = AF_INET;
 	addr.sin_port = htons(PORT);
-	addr.sin_addr.S_un.S_addr = inet_addr(ip);//°ó¶¨ipµØÖ·
+	addr.sin_addr.S_un.S_addr = inet_addr(ip);//ç»‘å®šipåœ°å€
 	if (INVALID_SOCKET == connect(fd, (struct sockaddr*)&addr, sizeof(addr)))
 		printf("error\n connect()can`t create new socket\n");
 
-	///////×ª»»sockaddr_inµ½sockaddrÀàĞÍ
+	///////è½¬æ¢sockaddr_inåˆ°sockaddrç±»å‹
 
 }
 void main() {
 	createinit();
 	client Client("127.0.0.1");
 	//client clone;
-	//clone.fd	=   accept(Sever.fd, NULL, NULL);////ÏÖÔÚ»¹Ã»ÓĞ½øĞĞ³õÊ¼»¯¶ÔÏóclient
-	//SOCKET fd = accept(Sever.fd, NULL, NULL);/////Ã»ÓĞÁ¬½ÓÏîËùÒÔ½øĞĞÁË¿¨¿Ç
+	//clone.fd	=   accept(Sever.fd, NULL, NULL);////ç°åœ¨è¿˜æ²¡æœ‰è¿›è¡Œåˆå§‹åŒ–å¯¹è±¡client
+	//SOCKET fd = accept(Sever.fd, NULL, NULL);/////æ²¡æœ‰è¿æ¥é¡¹æ‰€ä»¥è¿›è¡Œäº†å¡å£³
 	printf("created successfully,require connection\n");
 	char recvbuf[1024];
 	int ret;
-	ret = recv(Client.fd, recvbuf, 1024, 0);//////Æô¶¯£¬µ«ÊÇrecvµÄÊı¾İÔÚÄÄ²»Öª
+	ret = recv(Client.fd, recvbuf, 1024, 0);//////å¯åŠ¨ï¼Œä½†æ˜¯recvçš„æ•°æ®åœ¨å“ªä¸çŸ¥
+	SOCKET fd = accept(Client.fd, NULL, NULL);/////æ²¡æœ‰è¿æ¥é¡¹æ‰€ä»¥è¿›è¡Œäº†å¡å£³
+	printf("created successfully,wait for connect\n");
 	if (ret == 0)
 	{
-		printf("·şÎñÆ÷Õı³£ÏÂÏß\n");
+		printf("æœåŠ¡å™¨æ­£å¸¸ä¸‹çº¿\n");
 	}
 	else if (ret <= 0)
 	{
-		printf("·şÎñÆ÷·ÇÕı³£ÏÂÏß\n");
+		printf("æœåŠ¡å™¨éæ­£å¸¸ä¸‹çº¿\n");
 	}
+	
+	                     
+	std::cout << recvbuf << std::endl;
+	if (SOCKET_ERROR == send(Client.fd,"å®¢æˆ·ç«¯æ¥æ”¶åˆ°äº†æ‚¨çš„è¯·æ±‚", 12, 0)) {//////å¯åŠ¨ï¼Œä½†æ˜¯sendå‘é€åˆ°ä½•å¤„ä¸çŸ¥
+		printf("error\n send()can`t create new socket\n");
+	}//https://learn.microsoft.com/zh-cn/windows/win32/api/winsock2/nf-wi
+	std::cout << "å®Œæˆä¼ è¾“" << std::endl;
 	closesocket(Client.fd);
 	closeinit();
-	std::cout << recvbuf << std::endl;
-	std::cout << "Íê³É´«Êä" << std::endl;
 	getchar();
 }
