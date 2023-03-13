@@ -16,13 +16,14 @@ sever::sever() {
 	if (SOCKET_ERROR == bind(fd, (struct sockaddr*)&addr, sizeof(addr))) {
 		printf("error\n bind()can`t create new socket\n");
 	}
+	
 	listen(fd, 5);
 	printf(" sever is created successfully\n");
 	}
 void main() {
 	createinit();
 	sever Sever;
-	//client clone;
+	//client clone; 
 	//clone.fd	=   accept(Sever.fd, NULL, NULL);////现在还没有进行初始化对象client
 	SOCKET fd= accept(Sever.fd, NULL, NULL);/////没有连接项所以进行了卡壳
 	printf("created successfully,wait for connect\n");
@@ -36,6 +37,11 @@ void main() {
 	if (SOCKET_ERROR == send(fd, t, 12, 0)) {//////启动，但是send发送到何处不知
 		printf("error\n send()can`t create new socket\n");
 	}//https://learn.microsoft.com/zh-cn/windows/win32/api/winsock2/nf-winsock2-send
+	char recvbuf[1024];
+	memset(recvbuf, 0, 1024);
+	int ret;
+	ret = recv(fd, recvbuf, 1024, 0);//////启动，但是recv的数据在哪不知
+	std::cout << recvbuf << std::endl;
 	closesocket(fd);
 	closesocket(Sever.fd);
 	//close_Socket();

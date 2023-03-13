@@ -1,7 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(level 1.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
   sever.cpp
 C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\level 1\sever.cpp(15,30): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\level 1\sever.cpp(22,13): warning C4326: “main”的返回类型应为“int”而非“void”
-  tcpsocket.cpp
-  正在生成代码...
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\level 1\sever.cpp(23,13): warning C4326: “main”的返回类型应为“int”而非“void”
   level 1.vcxproj -> C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\x64\Debug\sever.exe
