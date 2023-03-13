@@ -61,6 +61,7 @@ ip地址的指定问题，因为addr.sin_addr.S_un.S_addr是一个ULONG形，而
 
 指向包含 addr 参数指向的结构长度的整数的可选指针。
 到此是两端之间的连接部分
+如果未发生错误， 则 accept 将返回一个类型为 SOCKET 的值，该值是新套接字的描述符。 此返回的值是实际连接的套接字的句柄。
 5.send(s,buf,len,flags)
 [in] s
 
