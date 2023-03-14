@@ -1,0 +1,11 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(level 1.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
+  sever.cpp
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\level 1\sever.cpp(16,30): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\level 1\sever.cpp(24,13): warning C4326: “main”的返回类型应为“int”而非“void”
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\level 1\sever.cpp(47,12): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\level 1\sever.cpp(69,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\level 1\sever.cpp(83,5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\level 1\sever.cpp(84,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\level 1\sever.cpp(94,6): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\level 1\sever.cpp(112,6): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  level 1.vcxproj -> C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\x64\Debug\sever.exe
