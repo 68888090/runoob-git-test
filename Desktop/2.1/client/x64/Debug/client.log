@@ -1,0 +1,6 @@
+﻿  client.cpp
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\client\client.cpp(14,30): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\client\client.cpp(21,13): warning C4326: “main”的返回类型应为“int”而非“void”
+  tcpsocket.cpp
+  正在生成代码...
+  client.vcxproj -> C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\x64\Debug\client.exe
