@@ -1,0 +1,11 @@
+﻿  client.cpp
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\client\client.cpp(16,30): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\client\client.cpp(23,13): warning C4326: “main”的返回类型应为“int”而非“void”
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\client\client.cpp(37,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\client\client.cpp(38,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\client\client.cpp(39,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\client\client.cpp(40,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\client\client.cpp(41,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\client\client.cpp(42,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\client\client.cpp(43,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  client.vcxproj -> C:\Users\刘浩然\OneDrive\文档\socket编程\level 1\x64\Debug\client.exe
